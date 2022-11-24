@@ -1,3 +1,46 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "prettier"],
+  "plugins": ["prettier", "import"],
+  "rules": {
+    "no-debugger": "warn",
+    "no-undef": "error",
+    "no-unreachable": "error",
+    "no-unused-vars": "error",
+    "eqeqeq": "error",
+    "no-console": "warn",
+    "no-param-reassign": "error",
+    "no-shadow": "error",
+    "prefer-const": "error",
+    "prefer-destructuring": "error",
+    "array-bracket-newline": "error",
+    "array-bracket-spacing": "error",
+    "arrow-spacing": "error",
+    "block-spacing": "error",
+    "comma-dangle": "error",
+    "jsx-quotes": "error",
+    "key-spacing": "error",
+    "no-multi-spaces": "error",
+    "no-tabs": "error",
+    "no-multiple-empty-lines": "error",
+    "space-in-parens": "error",
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "pathGroupsExcludedImportTypes": ["react"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "groups": ["builtin", "external", "parent", "sibling", "index"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ]
+      }
+    ]
+  }
 }
