@@ -1,0 +1,13 @@
+@use "styles/var";
+
+.navbar {
+  width: var.$s-navbar-width;
+  padding-left: 8px;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 37px;
+    gap: 24px;
+  }
+}
