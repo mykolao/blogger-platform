@@ -11,6 +11,8 @@ export const HeaderStyled = styled.div`
   justify-content: center;
   align-items: center;
 
+  z-index: 10;
+
   background-color: ${({ theme }) => theme.neutral_light_30};
 
   box-shadow: 0px 5px 20px rgba(29, 33, 38, 0.03),
