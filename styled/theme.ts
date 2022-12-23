@@ -8,7 +8,7 @@ export const theme = {
   neutral_light_30: "#FCFBFB",
   neutral_light_60: "#FCFBFB",
   neutral_light_neg_30: "#FCFBFB",
-  neutral_light_neg_10: "#ADABAC",
+  neutral_light_neg_10: "#DEDBDC",
   neutral_dark_30: "#737067",
   neutral_dark_60: "#737067",
   neutral_dark__neg_30: "#ADABAC",
