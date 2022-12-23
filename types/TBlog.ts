@@ -3,4 +3,5 @@ export interface TBlog {
   name: string;
   description: string;
   websiteUrl: string;
+  createdAt: string;
 }
