@@ -4,7 +4,7 @@ const routes = {
   },
   posts: (param?: string) => {
     return param ? `/posts/${param}` : `/posts`;
-  },
+  }
 };
 
 export default routes;
