@@ -5,4 +5,6 @@ export type TPost = {
   content: string;
   blogId: string;
   blogName: string;
-}
+};
+
+export type TPostList = TPost[];
