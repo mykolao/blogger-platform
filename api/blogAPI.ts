@@ -1,27 +1,14 @@
-import axios from "axios";
+import { axiosInstance } from "api/axiosInstance";
+import { IApiResponse } from "api/types";
 
-import { TBlog } from "types";
-
-const axiosInstance = axios.create({
-  baseURL: "https://blogs-black.vercel.app/",
-  headers: {
-    Accept: "application/json",
-    "Accept-Encoding": "identity"
-  }
-});
+import { TBlog, TBlogList } from "types";
 
 const endpoint = "blogs";
 
-interface IGetBlogsResponse {
-  pagesCount: number;
-  page: number;
-  pageSize: number;
-  totalCount: number;
-  items: TBlog[];
-}
+type TGetBlogsResponse = IApiResponse<TBlogList>;
 
 const getBlogs = async () => {
-  const res = await axiosInstance.get<IGetBlogsResponse>(endpoint);
+  const res = await axiosInstance.get<TGetBlogsResponse>(endpoint);
   return res.data;
 };
 
