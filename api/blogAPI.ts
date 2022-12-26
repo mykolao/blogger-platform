@@ -1,7 +1,7 @@
 import { axiosInstance } from "api/axiosInstance";
 import { IApiResponse } from "api/types";
 
-import { TBlog, TBlogList } from "types";
+import { TBlog, TBlogList, TPostList } from "types";
 
 const endpoint = "blogs";
 
@@ -19,4 +19,12 @@ const getBlog = async (id: string) => {
   return res.data;
 };
 
-export const blogAPI = { getBlogs, getBlog };
+const getPostsByBlog = async (id: string) => {
+  const url = `${endpoint}/${id}/posts`;
+  type Response = IApiResponse<TPostList>;
+
+  const res = await axiosInstance.get<Response>(url);
+  return res.data.items;
+};
+
+export const blogAPI = { getBlogs, getBlog, getPostsByBlog };
