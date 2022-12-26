@@ -3,13 +3,15 @@ import { FC } from "react";
 import Image from "next/image";
 import styled from "styled-components";
 
+import placeholder from "public/images/placeholder.svg";
+
 interface Props {
-  src: string;
+  src?: string;
+  alt: string;
 }
 
 const Container = styled.div`
-  margin: 12px -24px 0 -24px;
-  height: 312px;
+  margin-top: 20px;
 
   display: flex;
   justify-content: center;
@@ -17,16 +19,16 @@ const Container = styled.div`
 
   background-color: #fff;
 
-  & img {
-    width: 77px;
-    height: 63px;
-  }
+  width: 100%;
+  height: 420px;
 `;
 
-export const CoverImage: FC<Props> = ({ src }) => {
+export const PostImage: FC<Props> = ({ src, alt }) => {
+  const source = src ?? placeholder;
+
   return (
     <Container>
-      <Image src={src} alt="Blog Cover" />
+      <Image src={source} alt={alt} width={77} height={63} />
     </Container>
   );
 };

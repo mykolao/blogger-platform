@@ -5,28 +5,23 @@ import styled from "styled-components";
 
 interface Props {
   src: string;
+  alt: string;
 }
 
 const Container = styled.div`
-  margin: 12px -24px 0 -24px;
-  height: 312px;
-
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background-color: #fff;
+  height: 180px;
 
-  & img {
-    width: 77px;
-    height: 63px;
-  }
+  background-color: #fff;
 `;
 
-export const CoverImage: FC<Props> = ({ src }) => {
+export const PostItemImage: FC<Props> = ({ src, alt }) => {
   return (
     <Container>
-      <Image src={src} alt="Blog Cover" />
+      <Image src={src} alt={alt} />
     </Container>
   );
 };

@@ -2,6 +2,8 @@ import { FC } from "react";
 
 import styled from "styled-components";
 
+import { useDateFormat } from "hooks";
+
 interface Props {
   date: string;
 }
@@ -18,16 +20,8 @@ const Paragraph = styled.p`
   }
 `;
 
-const formatDate = (date: Date) => {
-  const month = date.getMonth();
-  const day = date.getDay();
-  const year = date.getFullYear();
-
-  return [month, day, year].join(".");
-};
-
 export const CreationDate: FC<Props> = ({ date }) => {
-  const dateValue = formatDate(new Date(date));
+  const { dateStr: dateValue } = useDateFormat(date);
 
   return (
     <Paragraph>
