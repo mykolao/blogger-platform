@@ -1,14 +1,15 @@
-import { PostItemImage } from "components/PostList/PostItem/PostItemImage";
-import { TPost } from "types";
+import { FC } from "react";
 
-import placeholder from "public/images/placeholder.svg";
 import { PostItemDetails } from "components/PostList/PostItem/PostItemDetails";
+import { PostItemImage } from "components/PostList/PostItem/PostItemImage";
+import placeholder from "public/images/placeholder.svg";
+import { TPost } from "types";
 
 interface Props {
   value: TPost;
 }
 
-export const PostItem: React.FC<Props> = ({ value }) => {
+export const PostItem: FC<Props> = ({ value }) => {
   const { title } = value;
 
   return (

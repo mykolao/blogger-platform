@@ -1,5 +1,8 @@
-import PostItem from "components/PostList/PostItem";
+import { FC } from "react";
+
 import styled from "styled-components";
+
+import PostItem from "components/PostList/PostItem";
 import { TPostList } from "types";
 
 interface Props {
@@ -16,7 +19,7 @@ const Grid = styled.section`
   gap: 20px 32px;
 `;
 
-export const PostList: React.FC<Props> = ({ posts }) => {
+export const PostList: FC<Props> = ({ posts }) => {
   return (
     <Grid>
       {posts.map((post) => (

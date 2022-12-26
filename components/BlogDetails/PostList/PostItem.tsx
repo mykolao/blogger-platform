@@ -1,10 +1,13 @@
-import styled from "styled-components";
-import { TPost } from "types";
-import placeholder from "public/images/placeholder.svg";
+import { FC } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
-import routes from "routes";
+import styled from "styled-components";
+
 import { useDateFormat } from "hooks";
+import placeholder from "public/images/placeholder.svg";
+import routes from "routes";
+import { TPost } from "types";
 
 interface Props {
   value: TPost;
@@ -47,7 +50,7 @@ const Date = styled.span`
   padding-top: 6px;
 `;
 
-export const PostItem: React.FC<Props> = ({ value }) => {
+export const PostItem: FC<Props> = ({ value }) => {
   const { id, title, shortDescription, createdAt } = value;
 
   const { dateStr } = useDateFormat(createdAt);

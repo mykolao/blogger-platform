@@ -1,11 +1,13 @@
+import { FC } from "react";
+
+import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-import { TPost } from "types";
 
-import placeholder from "public/images/placeholder.svg";
-import Image from "next/image";
-import routes from "routes";
 import { useDateFormat } from "hooks";
+import placeholder from "public/images/placeholder.svg";
+import routes from "routes";
+import { TPost } from "types";
 
 interface Props {
   value: TPost;
@@ -53,7 +55,7 @@ const Date = styled.p`
   color: ${({ theme }) => theme.neutral_light_neg_60};
 `;
 
-export const PostItemDetails: React.FC<Props> = ({ value }) => {
+export const PostItemDetails: FC<Props> = ({ value }) => {
   const { title, id, blogId, blogName, createdAt } = value;
   const { dateStr: date } = useDateFormat(createdAt);
 

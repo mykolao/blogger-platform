@@ -1,7 +1,10 @@
+import { FC } from "react";
+
+import styled from "styled-components";
+
 import { BlogPreview } from "components/PostDetails/BlogPreview";
 import { PostImage } from "components/PostDetails/PostImage";
 import { useDateFormat } from "hooks";
-import styled from "styled-components";
 import { TPost } from "types";
 
 interface Props {
@@ -32,7 +35,7 @@ const Paragraph = styled.p`
   padding-top: 30px;
 `;
 
-export const PostDetails: React.FC<Props> = ({ value }) => {
+export const PostDetails: FC<Props> = ({ value }) => {
   const { blogId, blogName, title, createdAt, content } = value;
 
   const { dateStr, timeStr } = useDateFormat(createdAt);

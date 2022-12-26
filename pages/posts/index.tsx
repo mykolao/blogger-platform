@@ -1,13 +1,15 @@
-import Head from "next/head";
+import { FC } from "react";
 
-import Layout from "components/Layout";
-import { TPostList } from "types";
 import { GetServerSideProps } from "next";
-import { postAPI } from "api";
+import Head from "next/head";
 import styled from "styled-components";
-import PageTitle from "components/PageTitle";
+
+import { postAPI } from "api";
 import Divider from "components/Divider";
+import Layout from "components/Layout";
+import PageTitle from "components/PageTitle";
 import PostList from "components/PostList";
+import { TPostList } from "types";
 
 interface Props {
   posts: TPostList;
@@ -26,7 +28,7 @@ const Container = styled.div`
   margin: 0 0 0 24px;
 `;
 
-const Posts: React.FC<Props> = ({ posts }) => {
+const Posts: FC<Props> = ({ posts }) => {
   return (
     <>
       <Head>

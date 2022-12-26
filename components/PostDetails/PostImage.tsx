@@ -1,6 +1,9 @@
+import { FC } from "react";
+
 import Image from "next/image";
-import placeholder from "public/images/placeholder.svg";
 import styled from "styled-components";
+
+import placeholder from "public/images/placeholder.svg";
 
 interface Props {
   src?: string;
@@ -20,7 +23,7 @@ const Container = styled.div`
   height: 420px;
 `;
 
-export const PostImage: React.FC<Props> = ({ src, alt }) => {
+export const PostImage: FC<Props> = ({ src, alt }) => {
   const source = src ?? placeholder;
 
   return (

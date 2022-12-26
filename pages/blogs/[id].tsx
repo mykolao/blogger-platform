@@ -11,8 +11,8 @@ import Divider from "components/Divider";
 import Layout from "components/Layout";
 import PageTitle from "components/PageTitle";
 import routes from "routes";
-import { TBlog } from "types/TBlog";
 import { TPostList } from "types";
+import { TBlog } from "types/TBlog";
 
 interface Props {
   blog: TBlog;

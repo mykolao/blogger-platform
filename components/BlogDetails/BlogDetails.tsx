@@ -4,11 +4,11 @@ import styled from "styled-components";
 
 import { CoverImage } from "components/BlogDetails/CoverImage";
 import Description from "components/BlogDetails/Description";
-import placeholder from "public/images/placeholder.svg";
-import { TBlog } from "types/TBlog";
-import { TPostList } from "types";
 import PostList from "components/BlogDetails/PostList";
 import Divider from "components/Divider";
+import placeholder from "public/images/placeholder.svg";
+import { TPostList } from "types";
+import { TBlog } from "types/TBlog";
 
 interface Props {
   value: TBlog;

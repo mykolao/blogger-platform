@@ -1,5 +1,8 @@
-import { PostItem } from "components/BlogDetails/PostList/PostItem";
+import { FC } from "react";
+
 import styled from "styled-components";
+
+import { PostItem } from "components/BlogDetails/PostList/PostItem";
 import { TPostList } from "types";
 
 interface Props {
@@ -15,7 +18,7 @@ const Section = styled.section`
   gap: 20px;
 `;
 
-export const PostList: React.FC<Props> = ({ posts }) => {
+export const PostList: FC<Props> = ({ posts }) => {
   return (
     <Section>
       {posts.map((post) => (

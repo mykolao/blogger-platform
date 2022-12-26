@@ -1,3 +1,5 @@
+import { FC } from "react";
+
 import Image from "next/image";
 import styled from "styled-components";
 
@@ -16,7 +18,7 @@ const Container = styled.div`
   background-color: #fff;
 `;
 
-export const PostItemImage: React.FC<Props> = ({ src, alt }) => {
+export const PostItemImage: FC<Props> = ({ src, alt }) => {
   return (
     <Container>
       <Image src={src} alt={alt} />

@@ -1,10 +1,12 @@
+import { FC } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
-import routes from "routes";
 import styled from "styled-components";
-import { TPost } from "types";
 
 import placeholder from "public/images/placeholder.svg";
+import routes from "routes";
+import { TPost } from "types";
 
 interface Props extends Pick<TPost, "blogName" | "blogId"> {}
 
@@ -36,7 +38,7 @@ const ImageContainer = styled.div`
   aspect-ratio: 1;
 `;
 
-export const BlogPreview: React.FC<Props> = ({ blogName, blogId }) => {
+export const BlogPreview: FC<Props> = ({ blogName, blogId }) => {
   return (
     <Container>
       <ImageContainer>

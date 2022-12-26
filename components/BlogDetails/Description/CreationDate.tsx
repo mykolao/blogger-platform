@@ -1,7 +1,8 @@
-import { useDateFormat } from "hooks";
 import { FC } from "react";
 
 import styled from "styled-components";
+
+import { useDateFormat } from "hooks";
 
 interface Props {
   date: string;
