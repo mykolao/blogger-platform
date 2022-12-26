@@ -12,9 +12,11 @@ import Layout from "components/Layout";
 import PageTitle from "components/PageTitle";
 import routes from "routes";
 import { TBlog } from "types/TBlog";
+import { TPostList } from "types";
 
 interface Props {
   blog: TBlog;
+  posts: TPostList;
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async (
@@ -23,9 +25,12 @@ export const getServerSideProps: GetServerSideProps<Props> = async (
   const queryId = context.query.id as string;
   const blog = await blogAPI.getBlog(queryId);
 
+  const posts = await blogAPI.getPostsByBlog(queryId);
+
   return {
     props: {
-      blog
+      blog,
+      posts
     }
   };
 };
@@ -34,7 +39,7 @@ const Container = styled.div`
   margin: 0 0 0 24px;
 `;
 
-const Blog: FC<Props> = ({ blog }) => {
+const Blog: FC<Props> = ({ blog, posts }) => {
   const { name } = blog;
 
   const title = `${name} | Blogger;`;
@@ -49,7 +54,7 @@ const Blog: FC<Props> = ({ blog }) => {
           <PageTitle title="Blogs" subtitle={name} />
           <Divider />
           <ArrowLink href={routes.blogs()}>Back to blogs</ArrowLink>
-          <BlogDetails value={blog} />
+          <BlogDetails value={blog} posts={posts} />
         </Container>
       </Layout>
     </>
