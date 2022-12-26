@@ -7,5 +7,11 @@ export const useDateFormat = (value: string) => {
 
   const dateStr = [month, day, year].join(".");
 
-  return { dateStr };
+  const hours = dateInstance.getHours();
+  const minutes = dateInstance.getMinutes();
+  const seconds = dateInstance.getSeconds();
+
+  const timeStr = [hours, minutes, seconds].join(":");
+
+  return { dateStr, timeStr };
 };
