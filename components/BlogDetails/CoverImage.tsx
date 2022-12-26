@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Container = styled.div`
-  margin: 12px 0 0 -24px;
+  margin: 12px -24px 0 -24px;
   height: 312px;
 
   display: flex;
