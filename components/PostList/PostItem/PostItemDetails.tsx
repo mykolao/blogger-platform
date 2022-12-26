@@ -34,7 +34,9 @@ const ImageContainer = styled.div`
   }
 `;
 
-const Title = styled.h4`
+const Title = styled(Link)`
+  display: block;
+
   font-weight: 600;
   font-size: 16px;
 `;
@@ -52,7 +54,7 @@ const Date = styled.p`
 `;
 
 export const PostItemDetails: React.FC<Props> = ({ value }) => {
-  const { title, blogId, blogName, createdAt } = value;
+  const { title, id, blogId, blogName, createdAt } = value;
   const { dateStr: date } = useDateFormat(createdAt);
 
   return (
@@ -61,7 +63,7 @@ export const PostItemDetails: React.FC<Props> = ({ value }) => {
         <Image src={placeholder} alt={title} />
       </ImageContainer>
       <div>
-        <Title>{title}</Title>
+        <Title href={routes.posts(id)}>{title}</Title>
         <BlogName href={routes.blogs(blogId)}>{blogName}</BlogName>
         <Date>{date}</Date>
       </div>
